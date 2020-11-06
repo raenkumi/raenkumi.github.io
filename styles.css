@@ -5,19 +5,25 @@
 
 h1 {
     font-size: 40px;
+    font-weight: bold;
 }
 
-h2 {
+h2, h5 {
     font-size: 25px;
+    font-weight: bold;
+
 }
 
 h6 {
+    
     font-size: 18px;
+    font-weight: bold;
+
 }
 
 p {
-    font-size: 20px;
-    margin: 3px 0;
+    font-size: 18px;
+    margin: 2px 0;
 }
 
 .fas {
@@ -44,6 +50,19 @@ main {
     margin: 0 0 20px 0;
     width: 100%;
 }
+
+address {
+    font-size: 35px;
+    padding: 15px 20px 20px;
+    color: black;
+    background-color: rgb(200, 214, 226);
+}
+
+#contact {
+    display: block;
+    margin: 3px 0 5px 0;
+}
+
 
 iframe {
     border: 0;
@@ -80,7 +99,9 @@ footer {
     }
     
     #contact {
-        margin: 3px 0 20px 0;
+        display: block;
+        font-size: 30px;
+        max-width: inherit;
     }
 
     .js-video {
