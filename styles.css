@@ -11,7 +11,6 @@ h1 {
 h2, h5 {
     font-size: 25px;
     font-weight: bold;
-
 }
 
 h6 {
@@ -71,6 +70,16 @@ iframe {
     height: 100%;
     min-height: 360px;
 }
+
+#breakdown-box {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: rgb(200, 214, 226);
+}
+
 
 
 footer {
