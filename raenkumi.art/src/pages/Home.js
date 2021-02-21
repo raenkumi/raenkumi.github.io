@@ -9,6 +9,7 @@ function Home() {
       <ArtContainer></ArtContainer>
       <ArtContainer></ArtContainer>
 
+
     </div>
   );
 }
