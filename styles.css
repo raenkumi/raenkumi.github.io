@@ -30,7 +30,7 @@ p {
 }
 
 body {
-    background-color: #efeae4;
+    background-color: #FFE16E;
     min-width: 320px;
     max-width: 640px;
     margin: 0px auto;
@@ -90,7 +90,7 @@ footer {
 @media only screen and (max-width: 600px) {
 
     body {
-        background-color: #efeae4;
+        background-color: #FFE16E;
         min-width: 320px;
     }
 }
