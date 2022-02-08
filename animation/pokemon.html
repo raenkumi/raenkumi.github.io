@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>mickey mouse watch</title>
+    <title>who is that pokemon?</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -35,9 +35,11 @@
       <div class="wrong">você errou :(</div>
       <div class="content">
         <div class="imgWrapper"></div>
-        <button id="resp1" onclick="answer(0)"></button>
-        <button id="resp2" onclick="answer(1)"></button>
-        <button id="resp3" onclick="answer(2)"></button>
+        <div id="pkmcontainer">
+          <button id="resp1" onclick="answer(0)"></button>
+          <button id="resp2" onclick="answer(1)"></button>
+          <button id="resp3" onclick="answer(2)"></button>
+        </div>
       </div>
     </main>
     <footer>
@@ -72,15 +74,15 @@
 
     async function getAllPokemons() {
       // query graph pra buscar pokemons da api
-      const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
-    pokemons(limit: $limit, offset: $offset) {
-      results {
-        id
-        name
-        image: artwork
+    const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
+      pokemons(limit: $limit, offset: $offset) {
+        results {
+          id
+          name
+          image: artwork
+        }
       }
-    }
-  }`;
+    }`;
 
       const gqlVariables = {
         limit: 151,
