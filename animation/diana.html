@@ -26,65 +26,81 @@
             <div class="diana" loading="eager" id="diana"></div>
             <div class="diana" loading="eager" id="capa"></div>
         </div>
-        <!--DIVS COM AS IMAGENS QUE TROCAM-->
+        <!-- Cada div é usado como container para apresentar as imagens da animação -->
 
     </main>
     <footer>
         <br>
-        <h2>bio <span>english</span></h2>
         <h6>raenkumi <span id="date"></span> | all rights to me bc I animated everything</h6>
     </footer>
 </body>
 <script>
 
 (function(){
-
-    var frame = 0;
+    var frame = 0; // contador pro frame atual
     var direction = 1; // 1 direita, 0 esquerda
-    var state = 'parado';
+    var state = 'parado'; // estado atual da animação
 
+    // função de loop que é chamada a cada 1/12 segundos
+    // o loop roda a animação e gerencia os estados intermediários
     var loop = setInterval(function(){ 
+
+        // depois de rolar, a personagem volta a correr
         if (state == 'rolar' && frame > 5) { 
             frame = 0;
             state = 'corrida';
         }
 
+        // depois de iniciar, a personagem corre
         if (state == 'iniciar' && frame > 3) { 
             frame = 0;
             state = 'corrida';
         }
 
+        // depois de parar, a personagem continua parada
         if (state == 'parar' && frame > 9) { 
             frame = 0;
             state = 'parado';
         }
 
+        // ao trocar de sentido, a personagem tem uma reação antes de voltar a correr
         if (state == 'voltar' && frame > 2) { 
             frame = 0;
             direction = -direction;
             state = 'iniciar';
         }
 
+        // se tá correndo, continua correndo
         if (state == 'corrida' && frame > 9) {
             frame = 0;
         }
 
+        // se tá parado, continua parado
         if (state == 'parado' && frame > 11) {
             frame = 0;
         }
         
+        // muda o background-image dos divs do personagem
         document.getElementById("diana").style.backgroundImage = 'url("diana/' + state + '/diana-' + frame+ '.png")';
-        document.getElementById("diana").style.transform = 'scaleX(' + direction + ')';
         document.getElementById("capa").style.backgroundImage = 'url("diana/' + state + '/capa-' + frame+ '.png")';
-        document.getElementById("capa").style.transform = 'scaleX(' + direction + ')';
         document.getElementById("contracapa").style.backgroundImage = 'url("diana/' + state + '/contracapa-' + frame+ '.png")';
+        
+        // muda a direção do personagem e das capas
+        document.getElementById("diana").style.transform = 'scaleX(' + direction + ')';
+        document.getElementById("capa").style.transform = 'scaleX(' + direction + ')';
         document.getElementById("contracapa").style.transform = 'scaleX(' + direction + ')';
         
+        // iterar frame
         frame++;
 
-    },  82);
+    },  82); // 1 segundo dividido por 24 frames dá 41 milissegundos
+            // mas como cada imagem ocupa 2 frames, dobra pra 82 ms
 
+    // função executa assim que uma tecla é apertada
+    // leva como argumento a tecla que foi pressionada
     window.onkeydown = function changeAnimation(evt) {
+
+        // guardar estado antes de mudar
         var previousState = state;
 
         // barra de espaço
@@ -102,6 +118,7 @@
         // seta para direita
         if (evt.keyCode == '37') {
             if (state == 'parado' || state == 'voltar') {
+                // condição para a personagem não "voltar" para o sentido que já está
                 if (direction > 0) direction = -direction;
                 state = 'iniciar';
             }
@@ -111,13 +128,14 @@
         // seta para esquerda
         if (evt.keyCode == '39') {
             if (state == 'parado' || state == 'voltar') {
+                // condição para a personagem não "voltar" para o sentido que já está
                 if (direction < 0) direction = -direction;
                 state = 'iniciar';
             }
-            else if (direction < 0)state = 'voltar';
+            else if (direction < 0) state = 'voltar';
         }
 
-        // se o estado mudou, começar a animação do começo
+        // se o estado mudou, começar a animação nova do começo
         if (state != previousState) frame = 0;
     }
 })(window);
