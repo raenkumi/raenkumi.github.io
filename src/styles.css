@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #efeae4;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2,
+h5 {
+  color: #dcd7d0;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  margin: 2px 0;
+}
+
+.fas {
+  size: 2px;
+}
+
+body {
+  background-color: #000000;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0px auto;
+  padding: 20px;
+  font-size: 100%;
+}
+
+header {
+  display: block;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+main {
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+address {
+  font-size: 35px;
+  padding: 15px 20px;
+  color: black;
+  background-color: rgb(200, 214, 226);
+}
+
+footer {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    min-width: 320px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  address p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  address p {
+    font-size: 15px;
+  }
+}
