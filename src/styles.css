@@ -7,6 +7,7 @@ h1 {
   color: #efeae4;
   font-size: 40px;
   font-weight: bold;
+  display: none;
 }
 
 h2,
@@ -14,6 +15,7 @@ h5 {
   color: #dcd7d0;
   font-size: 25px;
   font-weight: bold;
+  margin: 20px 0;
 }
 
 h6 {
@@ -45,12 +47,23 @@ header {
   width: 100%;
 }
 
+header img {
+  margin-top: 30px;
+  width: 100%;
+}
+
 main {
   margin: 0 0 20px 0;
   width: 100%;
 }
 
+main img {
+  width: 100%;
+  border-radius: 10px;
+}
+
 address {
+  border-radius: 10px;
   font-size: 35px;
   padding: 15px 20px;
   color: black;
@@ -65,16 +78,14 @@ footer {
   body {
     min-width: 320px;
   }
-}
 
-@media only screen and (max-width: 425px) {
-  address p {
-    font-size: 18px;
+  header img {
+    margin-top: 12px;
   }
 }
 
-@media only screen and (max-width: 370px) {
-  address p {
-    font-size: 15px;
+@media only screen and (max-width: 425px) {
+  header img {
+    margin-top: 5px;
   }
 }

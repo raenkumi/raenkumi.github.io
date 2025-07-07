@@ -5,12 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Solarum</title>
     <link rel="shortcut icon" href="../src/favicon.ico" />
-    <link rel="stylesheet" href="TemplateData/style.css" />
+    <link rel="stylesheet" href="webgl-assets/style.css" />
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <a href="../index.html">
+          <div id="unity-webgl-logo"></div>
+        </a>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Solarum</div>
       </div>
@@ -25,7 +27,7 @@
       </div>
     </div>
     <script>
-      var buildUrl = "Build";
+      var buildUrl = "build";
       var loaderUrl = buildUrl + "/20210511.loader.js";
       var config = {
         dataUrl: buildUrl + "/20210511.data",
